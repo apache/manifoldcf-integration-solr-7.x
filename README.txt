@@ -59,7 +59,7 @@ index. Depending on your schemaFactory setting in solrconfig.xml you have to
 use either the schema.xml file for 'ClassicIndexSchemaFactory' or the schema
 API for 'ManagedIndexSchemaFactory'. 
 See section 'Managed Schema Definition in SolrConfig' in the Solr Reference Gude
-https://www.apache.org/dyn/closer.cgi/lucene/solr/ref-guide/apache-solr-ref-guide-5.0.pdf
+https://www.apache.org/dyn/closer.cgi/lucene/solr/ref-guide/apache-solr-ref-guide-6.0.pdf
 
 For schema.xml simply add the following field definitions to the <schema>
 section:

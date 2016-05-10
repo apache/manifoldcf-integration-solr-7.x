@@ -1,7 +1,7 @@
 Apache ManifoldCF Plugin for Apache Solr 6.x change Log
 $Id$
 
-======================= 2.5-dev ======================
+======================= 2.2-dev ======================
 
 Initial commit.
 (Karl Wrigh)
