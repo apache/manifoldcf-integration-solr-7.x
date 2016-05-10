@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Solr managed schema - automatically generated - DO NOT EDIT -->
+<schema name="auth" version="1.5">
+  <uniqueKey>id</uniqueKey>
+  <fieldType name="string" class="solr.StrField"/>
+  <field name="allow_token_document" type="string" default="__nosecurity__" multiValued="true" indexed="true" stored="false"/>
+  <field name="allow_token_parent" type="string" default="__nosecurity__" multiValued="true" indexed="true" stored="false"/>
+  <field name="allow_token_share" type="string" default="__nosecurity__" multiValued="true" indexed="true" stored="false"/>
+  <field name="deny_token_document" type="string" default="__nosecurity__" multiValued="true" indexed="true" stored="false"/>
+  <field name="deny_token_parent" type="string" default="__nosecurity__" multiValued="true" indexed="true" stored="false"/>
+  <field name="deny_token_share" type="string" default="__nosecurity__" multiValued="true" indexed="true" stored="false"/>
+  <field name="id" type="string" indexed="true" required="true" stored="true"/>
+</schema>

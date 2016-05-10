@@ -251,7 +251,7 @@ public class ManifoldCFSearchComponent extends SearchComponent implements SolrCo
       userAccessTokens = getAccessTokens(domainMap);
     }
 
-    BooleanQuery bq = new BooleanQuery();
+    BooleanQuery.Builder bq = new BooleanQuery.Builder();
     //bf.setMaxClauseCount(100000);
     
     Query allowShareOpen = new TermQuery(new Term(fieldAllowShare,NOSECURITY_TOKEN));
@@ -293,7 +293,7 @@ public class ManifoldCFSearchComponent extends SearchComponent implements SolrCo
       list = new ArrayList<>();
       rb.setFilters(list);
     }
-    list.add(new ConstantScoreQuery(bq));
+    list.add(new ConstantScoreQuery(bq.build()));
   }
 
   @Override
@@ -308,20 +308,20 @@ public class ManifoldCFSearchComponent extends SearchComponent implements SolrCo
   */
   protected Query calculateCompleteSubquery(String allowField, String denyField, Query allowOpen, Query denyOpen, List<String> userAccessTokens)
   {
-    BooleanQuery bq = new BooleanQuery();
+    BooleanQuery.Builder bq = new BooleanQuery.Builder();
     BooleanQuery.setMaxClauseCount(1000000);
     
     // Add the empty-acl case
-    BooleanQuery subUnprotectedClause = new BooleanQuery();
+    BooleanQuery.Builder subUnprotectedClause = new BooleanQuery.Builder();
     subUnprotectedClause.add(allowOpen,BooleanClause.Occur.MUST);
     subUnprotectedClause.add(denyOpen,BooleanClause.Occur.MUST);
-    bq.add(subUnprotectedClause,BooleanClause.Occur.SHOULD);
+    bq.add(subUnprotectedClause.build(),BooleanClause.Occur.SHOULD);
     for (String accessToken : userAccessTokens)
     {
       bq.add(new TermQuery(new Term(allowField,accessToken)),BooleanClause.Occur.SHOULD);
       bq.add(new TermQuery(new Term(denyField,accessToken)),BooleanClause.Occur.MUST_NOT);
     }
-    return bq;
+    return bq.build();
   }
   
   //---------------------------------------------------------------------------------
