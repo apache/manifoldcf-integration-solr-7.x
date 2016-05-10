@@ -16,7 +16,7 @@
  limitations under the License.
 -->
 <!-- Solr managed schema - automatically generated - DO NOT EDIT -->
-<schema name="auth" version="1.5">
+<schema name="auth" version="1.6">
   <uniqueKey>id</uniqueKey>
   <fieldType name="string" class="solr.StrField"/>
   <field name="allow_token_document" type="string" default="__nosecurity__" multiValued="true" indexed="true" stored="false"/>
