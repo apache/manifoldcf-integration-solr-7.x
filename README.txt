@@ -38,7 +38,7 @@ Instructions for Building Apache ManifoldCF Plugin for Apache Solr 6.x from Sour
 
    Execute the following command in order to build the distribution assemblies
 
-   mvn package assembly:assembly
+   mvn clean package assembly:single
 
    The JAR package can be found in the target folder:
 
@@ -103,7 +103,7 @@ curl -X POST -H 'Content-type:application/json' --data-binary '{
 
 Replace <collection_name> with your core or collection name respectively.
 
-The default value of "__nosecurity__" is manadatory because the queries will be
+The default value of "__nosecurity__" is mandatory because the queries will be
 rewritten to use all of these 6 fields. If a field is missing in the index then
 you will get no results for your search.
 
