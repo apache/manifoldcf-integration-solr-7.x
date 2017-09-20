@@ -1,0 +1,12 @@
+Apache ManifoldCF Plugin for Apache Solr 6.x change Log
+$Id$
+
+======================= 2.3-dev ======================
+
+CONNECTORS-1338: Upgrade to SolrJ 6.3.0.
+(Shinichiro Abe)
+
+======================= Release 2.2 =====================
+
+Initial commit.
+(Karl Wright)
