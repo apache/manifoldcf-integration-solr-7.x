@@ -131,6 +131,7 @@ public class ManifoldCFSearchComponent extends SearchComponent implements SolrCo
     httpConnectionManager = new PoolingHttpClientConnectionManager();
     httpConnectionManager.setMaxTotal(poolSize);
     httpConnectionManager.setDefaultMaxPerRoute(poolSize);
+    httpConnectionManager.setValidateAfterInactivity(2000);
     httpConnectionManager.setDefaultSocketConfig(SocketConfig.custom()
             .setTcpNoDelay(true)
             .setSoTimeout(socketTimeOut)
@@ -139,7 +140,6 @@ public class ManifoldCFSearchComponent extends SearchComponent implements SolrCo
     RequestConfig.Builder requestBuilder = RequestConfig.custom()
             .setCircularRedirectsAllowed(true)
             .setSocketTimeout(socketTimeOut)
-            .setStaleConnectionCheckEnabled(true)
             .setExpectContinueEnabled(true)
             .setConnectTimeout(connectionTimeOut)
             .setConnectionRequestTimeout(socketTimeOut);
@@ -334,21 +334,9 @@ public class ManifoldCFSearchComponent extends SearchComponent implements SolrCo
   }
 
   @Override
-  public String getVersion()
-  {
-    return "$Revision$";
-  }
-
-  @Override
   public Category getCategory()
   {
-    return Category.QUERYHANDLER;
-  }
-
-  @Override
-  public String getSource()
-  {
-    return "$URL$";
+    return Category.QUERY;
   }
 
   @Override
