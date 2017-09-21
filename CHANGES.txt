@@ -3,13 +3,8 @@ $Id$
 
 ======================= 2.3-dev ======================
 
-CONNECTORS-1443: Upgrade to SolrJ 7.0.0.
+
+======================= Release 2.2 ======================
+
+Initial commit: Upgraded to Solr 7.0.0.
 (Shinichiro Abe)
-
-CONNECTORS-1338: Upgrade to SolrJ 6.3.0.
-(Shinichiro Abe)
-
-======================= Release 2.2 =====================
-
-Initial commit.
-(Karl Wright)
